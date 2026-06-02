@@ -13,7 +13,8 @@ import {
   useFocusEffect,
   useRoute,
 } from "@react-navigation/native";
-import { scheduleMedicationNotification, cancelMedicationNotification, } from "../services/notificatioimport { api } from "../services/api";
+import { scheduleMedicationNotification, cancelMedicationNotification } from "../services/notifications";
+import { api } from "../services/api";
 import { Medication } from "../types/medication";
 import { MedicationCard } from "../components/medication-card";
 export function MedicationsScreen() {
