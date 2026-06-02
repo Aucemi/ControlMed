@@ -54,5 +54,5 @@ export function generateAlerts(
             });
         }
     });
-    return alerts;
-}
+    return alerts; 
+} 
