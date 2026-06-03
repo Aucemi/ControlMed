@@ -4,6 +4,7 @@ import {
     StyleSheet,
     Pressable,
 } from "react-native";
+
 import { Medication } from "../types/medication";
 type Props = {
     medication: Medication;
@@ -13,6 +14,7 @@ type Props = {
     showActions?: boolean;
     patientName?: string;
 };
+
 export function MedicationCard({
     medication,
     onToggleTaken,
@@ -25,6 +27,7 @@ export function MedicationCard({
         new Date(medication.expirationDate) < new Date();
     const isLowStock =
         Number(medication.stock) <= 5;
+
     function getStatusText() {
         if (isExpired) return "Vencido";
         if (isLowStock) return "Estoque baixo";
@@ -41,7 +44,7 @@ export function MedicationCard({
         <View style={styles.card}>
             <View style={styles.header}>
                 <View style={styles.iconCircle}>
-                    <Text style={styles.icon}> </Text>
+                    <Text style={styles.icon}>💊</Text>
                 </View>
                 <View style={styles.titleContainer}>
                     <Text style={styles.name}>
@@ -52,7 +55,7 @@ export function MedicationCard({
                     </Text>
                     {patientName && (
                         <Text style={styles.patientName}>
-                            {patientName}
+                            👤 {patientName}
                         </Text>
                     )}
                 </View>
@@ -68,7 +71,7 @@ export function MedicationCard({
             <View style={styles.infoRow}>
                 <View style={styles.infoBox}>
                     <Text style={styles.infoLabel}>
-                        Horário
+                        🕒 Horário
                     </Text>
                     <Text style={styles.infoValue}>
                         {medication.time}
@@ -76,7 +79,7 @@ export function MedicationCard({
                 </View>
                 <View style={styles.infoBox}>
                     <Text style={styles.infoLabel}>
-                        Estoque
+                        📦 Estoque
                     </Text>
                     <Text
                         style={[
@@ -89,7 +92,7 @@ export function MedicationCard({
                 </View>
                 <View style={styles.infoBox}>
                     <Text style={styles.infoLabel}>
-                        Validade
+                       📅 Validade
                     </Text>
                     <Text
                         style={[
@@ -129,7 +132,7 @@ export function MedicationCard({
                         onPress={onEdit}
                     >
                         <Text style={styles.editButtonText}>
-                            Editar
+                           ✏️ Editar
                         </Text>
                     </Pressable>
                     <Pressable
@@ -140,7 +143,7 @@ export function MedicationCard({
                         onPress={onDelete}
                     >
                         <Text style={styles.deleteText}>
-                            Remover
+                          🗑️ Remover
                         </Text>
                     </Pressable>
                 </View>

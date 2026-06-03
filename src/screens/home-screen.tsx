@@ -6,11 +6,13 @@ import {
   ActivityIndicator,
   StyleSheet,
 } from "react-native";
+
 import { useFocusEffect } from "@react-navigation/native";
 import { api } from "../services/api";
 import { Medication } from "../types/medication";
 import { Patient } from "../types/patient";
 import { MedicationCard } from "../components/medication-card";
+
 export function HomeScreen() {
   const [medications, setMedications] =
     useState<Medication[]>([]);
@@ -76,7 +78,7 @@ export function HomeScreen() {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.greeting}>
-          Bom dia! ■
+          Bom dia! 👋
         </Text>
         <Text style={styles.date}>
           Controle dos medicamentos de hoje
@@ -107,7 +109,7 @@ export function HomeScreen() {
         </View>
       </View>
       <Text style={styles.sectionTitle}>
-        ■ Pendentes
+        ⏰ Pendentes
       </Text>
       {pendingMedications.length === 0 && (
         <Text style={styles.emptyText}>
@@ -126,7 +128,7 @@ export function HomeScreen() {
         />
       ))}
       <Text style={styles.sectionTitle}>
-        ■ Tomados
+        ✅ Tomados
       </Text>
       {takenMedications.length === 0 && (
         <Text style={styles.emptyText}>

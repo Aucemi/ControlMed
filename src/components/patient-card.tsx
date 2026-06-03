@@ -31,14 +31,16 @@ export function PatientCard({
           {patient.age} anos · {patient.relationship}
         </Text>
         <Text style={styles.medications}>
-          ■ {medicationsCount} medicamento(s)
+          💊 {medicationsCount} medicamento(s)
         </Text>
         <View style={styles.actions}>
           <Pressable onPress={onEdit}>
-            <Text style={styles.editText}>✏■ Editar</Text>
+            <Text style={styles.editText}>
+              ✏️ Editar</Text>
           </Pressable>
           <Pressable onPress={onDelete}>
-            <Text style={styles.deleteText}>■■ Remover</Text>
+            <Text style={styles.deleteText}>
+              🗑️ Remover</Text>
           </Pressable>
         </View>
       </View>

@@ -6,11 +6,13 @@ import {
   ActivityIndicator,
   StyleSheet,
 } from "react-native";
+
 import { useFocusEffect } from "@react-navigation/native";
 import { api } from "../services/api";
 import { Medication } from "../types/medication";
 import { Alert } from "../types/alert";
 import { generateAlerts } from "../services/generate-alerts";
+
 export function AlertsScreen() {
   const [alerts, setAlerts] =
     useState<Alert[]>([]);
@@ -35,11 +37,11 @@ export function AlertsScreen() {
     }
   }
   function getAlertIcon(type: string) {
-    if (type === "expired") return "■■";
-    if (type === "low_stock") return "■";
-    if (type === "pending") return "■";
-    if (type === "treatment_ending") return "■";
-    return "■";
+    if (type === "expired") return "⚠️";
+    if (type === "low_stock") return "📦";
+    if (type === "pending") return "⏰";
+    if (type === "treatment_ending") return "📅";
+    return "🔔";
   }
   function getAlertLabel(type: string) {
     if (type === "expired") return "Vencido";

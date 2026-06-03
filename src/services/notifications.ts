@@ -70,7 +70,7 @@ export async function scheduleMedicationNotification(
     }
     const notificationId = await Notifications.scheduleNotificationAsync({
       content: {
-        title: "Hora do medicamento ",
+        title: "Hora do medicamento 💊",
         body: `${patient.name} deve tomar ${medication.name} ${medication.dosage} agora.`,
         sound: "default",
         data: { medicationId: medication.id, patientId: patient.id },

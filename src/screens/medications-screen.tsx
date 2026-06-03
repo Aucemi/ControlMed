@@ -9,14 +9,17 @@ import {
   Pressable,
   Alert,
 } from "react-native";
+
 import {
   useFocusEffect,
   useRoute,
 } from "@react-navigation/native";
+
 import { scheduleMedicationNotification, cancelMedicationNotification } from "../services/notifications";
 import { api } from "../services/api";
 import { Medication } from "../types/medication";
 import { MedicationCard } from "../components/medication-card";
+
 export function MedicationsScreen() {
   const route = useRoute<any>();
   const { patient } = route.params;
